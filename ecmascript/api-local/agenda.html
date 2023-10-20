@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de contatos</title>
+</head>
+<body>
+
+ <form onsubmit="Cadastrar(event)"> <!-- event é uma palavra reservada do JavaScript -->
+    <form action="cep">CEP</form>
+    <input type="number" onblur="buscarEndereco(this.value)" placeholder="digite seu cep" id="cep">
+    <br></br>
+    
+    <form action="Endereco">Endereco</form>
+    <input type="text" placeholder=" ... " id="endereco">
+    <span id="not found"></span>
+    <br></br>
+    
+    <form action="Cidade">Cidade</form>
+    <input type="text" placeholder=" ... " id="cidade">
+    <br></br>
+    
+    <form action="estado">Estado</form>
+    <input type="text" placeholder=" ... " id="estado">
+    <br></br>
+    
+    <button>Cadastrar</button>
+
+    <script src="/funcoes.js"></script>
+</form>
+
+</body>
+</html>
