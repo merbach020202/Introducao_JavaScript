@@ -1,0 +1,68 @@
+<!-- 
+
+    criar um cadastro de frutas que exiba as frutas cadastradas em uma lista ul
+
+    o programa deverá ter um formulário web.
+    A lista deverá aparecer em ordem alfabética
+    você deverá exibir os dados com foreach e utilizar arrow functions
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="Cadastrar(event)">  <!--event porque é responsável pelo evento que dispara o formulário -->
+
+        <label for="fruta">Fruta</label>
+        <input type="text" placeholder="Digite o nome de uma fruta " id="fruta">
+        <br></br>
+
+        <button>Cadastrar fruta</button>
+
+    </form>
+
+    <form>
+        <div id="lista-frutas"></div>
+    </form>
+
+    <script>
+    const ArrFruta = []
+
+    function Cadastrar(e) { //e é uma palavra qualquer que representa o event do cadastrar
+    e.preventDefault(); //Captura o submit do formulário 
+    
+
+    const fruta = document.getElementById('fruta').value;
+    fruta.trim();//Limpa os espacos das extremidades
+    fruta.toLowerCase();
+
+    ArrFruta.push(fruta) //Aqui o push é para adicionar
+
+    let template = '<ul>'
+
+    ArrFruta.forEach((fruta) => {
+        template += `<li>${fruta}</li>`
+    })
+
+    template += '</ul>'
+
+    document.getElementById("lista-frutas").innerHTML = template
+
+
+
+    // console.log(ArrFruta.sort());
+    
+
+}
+
+
+    </script>
+</body>
+</html>
